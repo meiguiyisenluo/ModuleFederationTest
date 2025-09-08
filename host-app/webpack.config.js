@@ -38,11 +38,16 @@ module.exports = {
           singleton: true,
           eager: true,
         },
+        "react-router-dom": {
+          singleton: true,
+          eager: true,
+        },
       },
     }),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
   ],
   devServer: {
     port: 3001,
+    historyApiFallback: true,
   },
 };

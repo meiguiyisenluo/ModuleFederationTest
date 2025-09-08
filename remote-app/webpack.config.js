@@ -28,7 +28,9 @@ module.exports = {
       name: "remoteApp",
       filename: "remoteEntry.js",
       exposes: {
-        "./Button": "./src/Button.jsx", // 暴露组件
+        "./App": "./src/App.jsx",
+        "./Find": "./src/views/Find.jsx",
+        "./Article": "./src/views/Article.jsx",
       },
       shared: {
         react: {
@@ -37,6 +39,10 @@ module.exports = {
           eager: true,
         },
         "react-dom": {
+          singleton: true,
+          eager: true,
+        },
+        "react-router-dom": {
           singleton: true,
           eager: true,
         },
@@ -50,5 +56,6 @@ module.exports = {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
+    historyApiFallback: true,
   },
 };

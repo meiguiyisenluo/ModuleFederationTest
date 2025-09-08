@@ -1,9 +1,11 @@
 import React from "react";
-import Button from "./Button.jsx";
+
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
 
 export default () => (
-  <div>
+  <>
     <h1>Remote App</h1>
-    <Button></Button>
-  </div>
+    <RouterProvider router={router} />
+  </>
 );
